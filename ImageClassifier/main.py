@@ -105,6 +105,7 @@ num_iter = int(math.ceil(num_examples / batch_size))
 true_count = 0
 total_sample_count = num_iter * batch_size
 step = 0
+print(labels_test)# (?,)
 while step < num_iter:
     image_batch, label_batch = sess.run([images_test, labels_test])
     predictions = sess.run([top_k_op], feed_dict={image_holder: image_batch,label_holder: label_batch})
